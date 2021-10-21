@@ -1,7 +1,5 @@
-package com.onefivefour.codekatas
+package com.onefivefour.codekatas.arrays
 
-import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**

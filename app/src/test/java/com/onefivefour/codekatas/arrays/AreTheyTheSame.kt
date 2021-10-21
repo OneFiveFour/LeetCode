@@ -1,9 +1,8 @@
-package com.onefivefour.codekatas
+package com.onefivefour.codekatas.arrays
 
 import org.junit.Test
 
 import org.junit.Assert.*
-import kotlin.math.pow
 
 /**
  * Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities. 
