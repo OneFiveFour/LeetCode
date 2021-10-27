@@ -1,4 +1,4 @@
-package com.onefivefour.codekatas
+package com.onefivefour.codekatas.math
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
