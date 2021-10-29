@@ -7,7 +7,18 @@ import org.junit.Test
 Given an array, rotate the array to the right by k steps, where k is non-negative.
  */
 class RotateArray {
+    
+    
+    private fun rotate(nums: IntArray, k: Int): IntArray {
 
+        val copy = nums.copyOf()
+
+        for (i in nums.indices) {
+            nums[(i + k) % copy.size] = copy[i]
+        }
+
+        return nums
+    }
 
     @Test
     fun test1() {
@@ -62,16 +73,5 @@ class RotateArray {
 
         assertThat(result).isEqualTo(intArrayOf(2, 1))
 
-    }
-
-    private fun rotate(nums: IntArray, k: Int): IntArray {
-
-        val copy = nums.copyOf()
-
-        for (i in nums.indices) {
-            nums[(i + k) % copy.size] = copy[i]
-        }
-
-        return nums
     }
 }
