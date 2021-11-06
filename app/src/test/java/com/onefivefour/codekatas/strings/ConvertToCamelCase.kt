@@ -1,4 +1,4 @@
-package com.onefivefour.codekatas
+package com.onefivefour.codekatas.strings
 
 import junit.framework.Assert.assertEquals
 import org.junit.Test

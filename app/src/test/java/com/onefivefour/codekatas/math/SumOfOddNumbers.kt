@@ -1,9 +1,7 @@
-package com.onefivefour.codekatas
+package com.onefivefour.codekatas.math
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
-import kotlin.math.pow
 
 /**
  * Given the triangle of consecutive odd numbers:
