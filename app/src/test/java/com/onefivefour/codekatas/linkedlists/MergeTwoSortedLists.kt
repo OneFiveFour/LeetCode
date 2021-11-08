@@ -9,6 +9,9 @@ Merge two sorted linked lists and return it as a sorted list. The list should be
 class MergeTwoSortedLists {
 
 
+    /**
+     * Iterative approach
+     */
     private fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
         
         // make sure each list has at least one element
@@ -70,6 +73,9 @@ class MergeTwoSortedLists {
         return result
     }
 
+    /**
+     * Recursive approach
+     */
     fun mergeTwoLists2(l1: ListNode?, l2: ListNode?): ListNode? {
         if(l1==null && l2==null) return null
         if(l1==null) return l2
