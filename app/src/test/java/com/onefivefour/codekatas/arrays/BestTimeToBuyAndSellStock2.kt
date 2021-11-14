@@ -10,7 +10,7 @@ On each day, you may decide to buy and/or sell the stock. You can only hold at m
 
 Find and return the maximum profit you can achieve
  */
-class BestTimeToBuyAndSell {
+class BestTimeToBuyAndSellStock2 {
 
 
     @Test
