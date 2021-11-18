@@ -11,7 +11,7 @@ import org.junit.Test
  * 2008 is written as 2000=MM, 8=VIII; or MMVIII. 
  * 1666 uses each Roman symbol in descending order: MDCLXVI.
  */
-class RomanNumerals {
+class IntegerToRoman {
 
 
     fun encode(num: Int): String {
