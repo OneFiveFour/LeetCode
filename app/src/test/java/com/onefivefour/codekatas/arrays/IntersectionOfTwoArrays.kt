@@ -19,23 +19,16 @@ class IntersectionOfTwoArrays {
 
     private fun intersect(nums1: IntArray, nums2: IntArray): IntArray {
 
+        if (nums1.size > nums2.size) {
+            return intersect(nums2, nums1)
+        }
+
         val result = mutableListOf<Int>()
 
-        if (nums1.size < nums2.size) {
-
-            val copy = nums2.toMutableList()
-            nums1.forEach { num ->
-                if (copy.remove(num)) {
-                    result.add(num)
-                }
-            }
-
-        } else {
-            val copy = nums1.toMutableList()
-            nums2.forEach { num ->
-                if (copy.remove(num)) {
-                    result.add(num)
-                }
+        val copy = nums2.toMutableList()
+        nums1.forEach { num ->
+            if (copy.remove(num)) {
+                result.add(num)
             }
         }
 

@@ -9,16 +9,17 @@ import org.junit.Test
 class ReverseString {
 
     private fun reverseString(s: CharArray) {
-       
-        val midPoint = (s.size / 2) - 1
-        if (midPoint < 0) return
-        var reverseIndex = s.lastIndex
-        
-        for (i in 0 .. midPoint) {
-            val temp = s[i]
-            s[i] = s[reverseIndex]
-            s[reverseIndex] = temp            
-            reverseIndex--    
+
+        var left = 0
+        var right = s.lastIndex
+
+        while (left< right) {
+            val temp = s[left]
+            s[left] = s[right]
+            s[right] = temp
+
+            left++
+            right--
         }
         
     }

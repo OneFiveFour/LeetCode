@@ -100,7 +100,7 @@ class ValidSudoku {
 
     }
 
-    private fun isValidSudoku(board: Array<CharArray>): Boolean {
+    private fun isValidSudoku4(board: Array<CharArray>): Boolean {
         val boardSize = board.size
         
         // we have 9 rows, 9 cols and 9 boxes
@@ -143,7 +143,7 @@ class ValidSudoku {
         val seen = mutableSetOf<String>()
         for (i in board.indices) {
             
-            for (j in board[0].indices) {
+            for (j in board[i].indices) {
                 
                 // create strings that are unique to every of
                 // the 3 types of checks
@@ -159,6 +159,85 @@ class ValidSudoku {
                 }
             }
         }
+        return true
+    }
+
+    private fun isValidSudoku(board: Array<CharArray>): Boolean {
+
+        for (rowIndex in board.indices) {
+
+            for (colIndex in board[rowIndex].indices) {
+
+                if (board[rowIndex][colIndex] == '.') continue
+
+                // check row
+                if (!isValidRow(board, rowIndex, colIndex)) return false
+
+                // check col
+                if (!isValidCol(board, rowIndex, colIndex)) return false
+
+                // check square
+                if (!isValidSquare(board, rowIndex, colIndex)) return false
+
+            }
+
+        }
+
+        return true
+
+    }
+
+    private fun isValidRow(board: Array<CharArray>, rowIndex: Int, colIndex: Int) : Boolean {
+        val value = board[rowIndex][colIndex]
+        for (i in board[rowIndex].indices) {
+            if (i == colIndex) continue
+            if (board[rowIndex][i] == value) return false
+        }
+
+        return true
+    }
+
+
+    private fun isValidCol(board: Array<CharArray>, rowIndex: Int, colIndex: Int) : Boolean {
+        val value = board[rowIndex][colIndex]
+        for (i in board.indices) {
+            if (i == rowIndex) continue
+            if (board[i][colIndex] == value) return false
+        }
+
+        return true
+    }
+
+
+    private fun isValidSquare(board: Array<CharArray>, rowIndex: Int, colIndex: Int) : Boolean {
+        val value = board[rowIndex][colIndex]
+
+        // get row range
+        val rowRange = when {
+            rowIndex <= 2 -> 0 .. 2
+            rowIndex <= 5 -> 3 .. 5
+            else -> 6 .. 8
+        }
+
+        // get col range
+        val colRange = when {
+            colIndex <= 2 -> 0 .. 2
+            colIndex <= 5 -> 3 .. 5
+            else -> 6 .. 8
+        }
+
+        for (i in rowRange) {
+
+            for (j in colRange) {
+
+                if (i == rowIndex && j == colIndex) continue
+
+                if (board[i][j] == value) return false
+
+            }
+
+        }
+
         return true
     }
 

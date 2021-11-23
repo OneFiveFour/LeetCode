@@ -71,7 +71,7 @@ class ReverseInteger {
 
     @Test
     fun test5() {
-        val input = 964632435
+        val input = 964632499
 
         val result = reverse(input)
 

@@ -9,7 +9,7 @@ Given an array, rotate the array to the right by k steps, where k is non-negativ
 class RotateArray {
     
     
-    private fun rotate(nums: IntArray, k: Int): IntArray {
+    private fun rotate2(nums: IntArray, k: Int) {
 
         val copy = nums.copyOf()
 
@@ -17,7 +17,40 @@ class RotateArray {
             nums[(i + k) % copy.size] = copy[i]
         }
 
-        return nums
+    }
+    
+    private fun rotate(nums: IntArray, k: Int) {
+        
+        var shift = k
+        while (shift > nums.size) {
+            shift -= nums.size
+        }
+
+        var left = 0
+        var right = nums.lastIndex - shift
+        reverse(left, right, nums)
+
+
+        left = nums.lastIndex - shift + 1
+        right = nums.lastIndex
+        reverse(left, right, nums)
+        
+        left = 0
+        right = nums.lastIndex
+        reverse(left, right, nums)
+        
+    }
+
+    private fun reverse(left: Int, right: Int, nums: IntArray) {
+        var right2 = right
+        for (i in left..right2) {
+            if (i >= right2) break
+
+            val temp = nums[i]
+            nums[i] = nums[right2]
+            nums[right2] = temp
+            right2--
+        }
     }
 
     @Test
@@ -25,9 +58,9 @@ class RotateArray {
         val nums = intArrayOf(1, 2, 3, 4, 5, 6, 7)
         val k = 3
 
-        val result = rotate(nums, k)
+        rotate(nums, k)
 
-        assertThat(result).isEqualTo(intArrayOf(5, 6, 7, 1, 2, 3, 4))
+        assertThat(nums).isEqualTo(intArrayOf(5, 6, 7, 1, 2, 3, 4))
 
     }
 
@@ -36,9 +69,9 @@ class RotateArray {
         val nums = intArrayOf(-1, -100, 3, 99)
         val k = 2
 
-        val result = rotate(nums, k)
+        rotate(nums, k)
 
-        assertThat(result).isEqualTo(intArrayOf(3, 99, -1, -100))
+        assertThat(nums).isEqualTo(intArrayOf(3, 99, -1, -100))
 
     }
 
@@ -47,9 +80,9 @@ class RotateArray {
         val nums = intArrayOf(1, 2)
         val k = 3
 
-        val result = rotate(nums, k)
+        rotate(nums, k)
 
-        assertThat(result).isEqualTo(intArrayOf(2, 1))
+        assertThat(nums).isEqualTo(intArrayOf(2, 1))
 
     }
 
@@ -58,9 +91,9 @@ class RotateArray {
         val nums = intArrayOf(1, 2, 3)
         val k = 4
 
-        val result = rotate(nums, k)
+        rotate(nums, k)
 
-        assertThat(result).isEqualTo(intArrayOf(3, 1, 2))
+        assertThat(nums).isEqualTo(intArrayOf(3, 1, 2))
 
     }
 
@@ -69,9 +102,9 @@ class RotateArray {
         val nums = intArrayOf(1, 2)
         val k = 5
 
-        val result = rotate(nums, k)
+        rotate(nums, k)
 
-        assertThat(result).isEqualTo(intArrayOf(2, 1))
+        assertThat(nums).isEqualTo(intArrayOf(2, 1))
 
     }
 }

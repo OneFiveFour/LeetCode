@@ -14,18 +14,20 @@ class PlusOne {
 
 
     private fun plusOne(digits: IntArray): IntArray {
-        
-        if (digits.isEmpty()) return intArrayOf()
-        
-        for (i in digits.indices.reversed()) {
-            digits[i] = (digits[i] + 1) % 10
-            if (digits[i] > 0) break
+
+        for (i in digits.lastIndex downTo 0) {
+
+            if (digits[i] == 9) {
+                digits[i] = 0
+                if (i == 0) {
+                    return intArrayOf(1) + digits
+                }
+            } else {
+                digits[i] += 1
+                return digits
+            }
         }
-        
-        if (digits.first() == 0) {
-            return intArrayOf(1) + digits
-        }
-        
+
         return digits
     }
 
