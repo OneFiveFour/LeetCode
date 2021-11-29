@@ -6,39 +6,37 @@ import org.junit.Test
 /**
 Given a string s, find the length of the longest substring without repeating characters.
  */
-class LongestUniqueSubstring {
+class LongestSubstringWithoutRepeatingCharacters {
 
     private fun lengthOfLongestSubstring(s: String): Int {
 
-        var test = ""
+        if (s.length < 2) return s.length
 
-        // Result
-        var maxLength = -1
+        var left = 0
+        var right = 1
 
-        // Return zero if string is empty
-        if (s.isEmpty()) {
-            return 0
-            
-        } else if (s.length == 1) {
-            return 1
-            
-        }
-        
-        
-        for (c in s.toCharArray()) {
-            val current = c.toString()
+        var result = -1
+        var testString = s.substring(0, 1)
 
-            // If string already contains the character
-            // Then substring after repeating character
-            if (test.contains(current)) {
-                test = test.substring(test.indexOf(current) + 1)
+        while (right < s.length) {
+
+            if (testString.contains(s[right])) {
+                result = Math.max(result, right - left)
+                left += testString.indexOf(s[right]) + 1
             }
-            test += c.toString()
-            maxLength = Math.max(test.length, maxLength)
+
+
+            right++
+
+            testString = s.substring(left, right)
+
         }
 
-        return maxLength
+        return Math.max(result, right - left)
     }
+    
+    
+    
 
     @Test
     fun test1() {
@@ -65,6 +63,15 @@ class LongestUniqueSubstring {
         val result = lengthOfLongestSubstring(input1)
 
         Truth.assertThat(result).isEqualTo(3)
+    }
+
+    @Test
+    fun test4() {
+        val input1 = "au"
+
+        val result = lengthOfLongestSubstring(input1)
+
+        Truth.assertThat(result).isEqualTo(2)
     }
 
 
