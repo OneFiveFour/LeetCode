@@ -2,6 +2,7 @@
 A collection of possible solutions to LeetCode problems
 
 1\. Two Sum - [Link To LeetCode](https://leetcode.com/problems/two-sum) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/arrays/TwoSum.kt)  
+2\. Add Two Numbers - [Link To LeetCode](https://leetcode.com/problems/two-sum) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/linkedlists/AddTwoNumbers.kt)  
 3\. Longest Substring Without Repeating Characters - [Link To LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/strings/LongestSubstringWithoutRepeatingCharacters.kt)  
 5\. Longest Palindromic Substring - [Link To LeetCode](https://leetcode.com/problems/longest-palindromic-substring) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/strings/LongestPalindromicSubstring.kt)  
 7\. Reverse Integer - [Link To LeetCode](https://leetcode.com/problems/reverse-integer) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/strings/ReverseInteger.kt)  
@@ -40,6 +41,7 @@ A collection of possible solutions to LeetCode problems
 144\. Binary Tree Preorder Traversal - [Link To LeetCode](https://leetcode.com/problems/binary-tree-preorder-traversal) - [Link To Solution]()  
 145\. Binary Tree Postorder Traversal - [Link To LeetCode](https://leetcode.com/problems/binary-tree-postorder-traversal) - [Link To Solution]()  
 155\. Min Stack - [Link To LeetCode](https://leetcode.com/problems/min-stack) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/design/MinStack.kt)  
+163\. Missing Ranges - [Link To LeetCode](https://leetcode.com/problems/missing-ranges) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/arrays/MissingRanges.kt)  
 167\. Two Sum II - Input Array Is Sorted - [Link To LeetCode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/arrays/TwoSum2.kt)  
 189\. Rotate Array - [Link To LeetCode](https://leetcode.com/problems/rotate-array) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/arrays/RotateArray.kt)  
 190\. Reverse Bits - [Link To LeetCode](https://leetcode.com/problems/reverse-bits) - [Link To Solution](https://github.com/OneFiveFour/LeetCode/blob/main/app/src/test/java/com/onefivefour/codekatas/bits/ReverseBits.kt)  
