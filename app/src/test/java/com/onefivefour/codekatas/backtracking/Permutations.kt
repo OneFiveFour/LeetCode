@@ -76,7 +76,7 @@ class Permutations {
             
             backtracking(result, currentPermutation, nums)
             
-            currentPermutation.remove(num)
+            currentPermutation.removeAt(currentPermutation.lastIndex)
         }
     }
 
